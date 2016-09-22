@@ -25,25 +25,25 @@ appl_ctbox_su :
 	
 	
 ################dispaly_sv########
-dispaly_sv : uboot_dispaly_sv kernel_dispaly_sv appl_dispaly_sv
-uboot_dispaly_sv :
-	cd  $(boot_logo_dir)/bmpToRaster/ && $(MAKE);./a.out 800 1280 ./boot-logo-uboot-dispaly-sv.bmp ./image-dispaly-sv.h 24 RGB h;cp -r -f image-dispaly-sv.h $(uboot_drv_lcd_dir)
+display_sv : uboot_display_sv kernel_display_sv appl_display_sv
+uboot_display_sv :
+	cd  $(boot_logo_dir)/bmpToRaster/ && $(MAKE);./a.out 1360 768 ./boot-logo-uboot-display-sv.bmp ./image-display-sv.h 24 RGB h;cp -r -f image-display-sv.h $(uboot_drv_lcd_dir)
 	
-kernel_dispaly_sv :
-	cd  $(boot_logo_dir)/script;./makeimage-kernel.sh logo_sv_dispaly_clut224.jpg logo_sv_dispaly_clut224.ppm;\cp -r -f logo_sv_dispaly_clut224.ppm $(linux_drv_logo)
+kernel_display_sv :
+	cd  $(boot_logo_dir)/script;./makeimage-kernel.sh logo_sv_display_clut224.jpg logo_sv_diisplay_clut224.ppm;\cp -r -f logo_sv_display_clut224.ppm $(linux_drv_logo)
 	
-appl_dispaly_sv :
-	cd $(boot_logo_dir)/psplash;./build.sh sv-dispaly
+appl_display_sv :
+	cd $(boot_logo_dir)/psplash;./build.sh sv-display
 	
 ################dispaly_su##########
-dispaly_su : uboot_dispaly_su kernel_dispaly_su appl_dispaly_su
-uboot_dispaly_su :
-	cd  $(boot_logo_dir)/bmpToRaster/ && $(MAKE);./a.out 800 1280 ./boot-logo-uboot-dispaly-su.bmp ./image-dispaly-su.h 24 RGB h;cp -r -f image-dispaly-su.h $(uboot_drv_lcd_dir)
+display_su : uboot_display_su kernel_display_su appl_display_su
+uboot_display_su :
+	cd  $(boot_logo_dir)/bmpToRaster/ && $(MAKE);./a.out 1360 768 ./boot-logo-uboot-display-su.bmp ./image-display-su.h 24 RGB h;cp -r -f image-display-su.h $(uboot_drv_lcd_dir)
 	
-kernel_dispaly_su :
-	cd  $(boot_logo_dir)/script;./makeimage-kernel.sh logo_su_dispaly_clut224.jpg logo_su_dispaly_clut224.ppm;\cp -r -f logo_su_dispaly_clut224.ppm $(linux_drv_logo)
+kernel_display_su :
+	cd  $(boot_logo_dir)/script;./makeimage-kernel.sh logo_su_display_clut224.jpg logo_su_display_clut224.ppm;\cp -r -f logo_su_display_clut224.ppm $(linux_drv_logo)
 	
-appl_dispaly_su :
+appl_display_su :
 	cd $(boot_logo_dir)/psplash;./build.sh su-dispaly
 
 	
